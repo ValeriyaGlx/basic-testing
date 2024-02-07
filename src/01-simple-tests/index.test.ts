@@ -1,32 +1,40 @@
-// Uncomment the code below and write your tests
-// import { simpleCalculator, Action } from './index';
+import { simpleCalculator } from './index';
+import {
+  mockAddInput,
+  mockDivideInput,
+  mockExponentiateInput,
+  mockInvalidActionInput,
+  mockInvalidArgsInput,
+  mockMultiplyInput,
+  mockSubtractInput,
+} from './mocks';
 
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
-    // Write your test here
+    expect(simpleCalculator(mockAddInput)).toBe(10);
   });
 
   test('should subtract two numbers', () => {
-    // Write your test here
+    expect(simpleCalculator(mockSubtractInput)).toBe(6);
   });
 
   test('should multiply two numbers', () => {
-    // Write your test here
+    expect(simpleCalculator(mockMultiplyInput)).toBe(16);
   });
 
   test('should divide two numbers', () => {
-    // Write your test here
+    expect(simpleCalculator(mockDivideInput)).toBe(4);
   });
 
   test('should exponentiate two numbers', () => {
-    // Write your test here
+    expect(simpleCalculator(mockExponentiateInput)).toBe(64);
   });
 
   test('should return null for invalid action', () => {
-    // Write your test here
+    expect(simpleCalculator(mockInvalidActionInput)).toBe(null);
   });
 
   test('should return null for invalid arguments', () => {
-    // Write your test here
+    expect(simpleCalculator(mockInvalidArgsInput)).toBe(null);
   });
 });
