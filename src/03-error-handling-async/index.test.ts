@@ -8,14 +8,16 @@ import {
 
 describe('resolveValue', () => {
   test('should resolve provided value', async () => {
-    const data = await resolveValue(2);
-    expect(data).toBe(2);
+    const mockProvidedValue = 2;
+    const data = await resolveValue(mockProvidedValue);
+    expect(data).toBe(mockProvidedValue);
   });
 });
 
 describe('throwError', () => {
   test('should throw error with provided message', () => {
-    expect(() => throwError('Mock Error')).toThrow('Mock Error');
+    const mockProvidedMessage = 'Mock Error';
+    expect(() => throwError(mockProvidedMessage)).toThrow(mockProvidedMessage);
   });
 
   test('should throw error with default message if message is not provided', () => {

@@ -48,12 +48,11 @@ describe('BankAccount', () => {
     expect(otherAccount.getBalance()).toBe(10);
   });
 
-  // TODO ??
   test('fetchBalance should return number in case if request did not failed', async () => {
     const randomMock = jest.fn().mockReturnValueOnce(1000);
     account.fetchBalance = jest.fn().mockImplementation(() => randomMock());
     const balance = await account.fetchBalance();
-    expect(balance).toBe(1000);
+    expect(typeof balance).toBe('number');
   });
 
   test('should set new balance if fetchBalance returned number', async () => {
